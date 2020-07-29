@@ -1,0 +1,365 @@
+@charset "utf-8";
+@import "../node_modules/bulma/bulma.sass";
+@import '../node_modules/bulma-switch/dist/css/bulma-switch.sass';
+
+
+$navbar-background-color: #2a3877;
+$feature-background-color: #334c9f;
+
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width:37.5em) { @content };     //600px
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width:56.25em) { @content };      //900px
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width:75em) { @content };     //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media (min-width:112.5em) { @content };     //1800px
+    }
+}
+
+
+
+.navbar {
+
+    @include respond(tab-port) {
+        .navbar-menu {
+            padding: 0;
+        }
+    }
+    
+    &.is-primary {
+        background-color: $navbar-background-color;
+
+    }
+
+    .navbar-item.is-active {
+        background-color: $navbar-background-color;
+        color: #fff;
+    }
+
+
+    .button.is-rounded {
+        border-width: 2px;
+        ;
+        border-color: #fff;
+
+        &:hover {
+            background-color: $navbar-background-color;
+            color: #fff;
+            border-width: 2px;
+            ;
+
+        }
+    }
+
+
+    &.is-primary .navbar-item.has-dropdown:hover .navbar-link {
+        background-color: $navbar-background-color;
+    }
+
+
+    .navbar-item.has-dropdown:hover {
+        background-color: $navbar-background-color;
+
+        .navbar-linl {
+            background-color: $navbar-background-color;
+
+            &:hover {
+                background-color: $navbar-background-color;
+            }
+        }
+
+    }
+
+    &.is-primary .navbar-end>a.navbar-item {
+        background-color: $navbar-background-color;
+        color: #989fb8;
+
+        &.is-active {
+            background-color: $navbar-background-color;
+            color: #fff;
+        }
+
+        &:hover {
+            background-color: $navbar-background-color;
+            color: #fff;
+        }
+    }
+}
+
+.hero {
+    padding: 2rem 0;
+
+    .title {
+        font-weight: 400;
+        text-align: center;
+
+    }
+
+    &.is-light {
+        background-color: #f4f7fe;
+    }
+}
+
+.plans-title {
+    text-align: center;
+    color: $navbar-background-color;
+    font-weight: 500;
+    padding-bottom: 2rem;
+
+    &::after {
+        display: block;
+        text-align: center;
+        border-bottom: 4px solid $navbar-background-color;
+        ;
+        content: "";
+        width: 50px;
+        margin: auto;
+        margin-top: 1rem;
+    }
+}
+
+.plan-card {
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .02);
+
+    &.not-center-plan {
+        margin-top: 1.5rem;
+
+    }
+
+
+    &__name {
+        background-color: $feature-background-color;
+
+        text-align: center;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+
+        .title {
+            color: #fff;
+        }
+    }
+
+    &__header {
+        background-color: #f4f7fe;
+        text-align: center;
+        color: #000;
+        padding: 2rem 2rem 3rem 2rem;
+        min-height: 13rem;
+
+    }
+
+    &__price {
+        color: #9453a2;
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+
+    &__subscription {
+        text-align: center;
+
+        &-offer {
+            color: $feature-background-color;
+        }
+
+        .switch[type="checkbox"].is-info:checked+label::before,
+        .switch[type="checkbox"].is-info:checked+label:before {
+            background: #334c9f;
+        }
+    }
+
+    &__features {
+        margin: 2rem;
+        background-color: #fff;
+    }
+
+    &__feature {
+
+        &-key {
+            font-size: .9rem;
+            color: #b8bbc0;
+        }
+
+        &-value {
+            color: #47494d;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+
+        }
+
+        hr {
+            margin-top: 0.5rem;
+            border-bottom-color: #b8bbc0;
+        }
+    }
+
+    &__action {
+        text-align: center;
+        padding-bottom: 3rem;
+        height: 5rem;
+
+        .button.is-rounded {
+
+            background-color: #9453a2;
+            color: #fff;
+            font-weight: 400;
+
+
+        }
+    }
+
+}
+
+.divider {
+    height: 5rem;
+    width: 100%;
+    background-color: #fafafa;
+    margin-top: 5rem;
+
+
+
+}
+
+.footer {
+    background-color: $feature-background-color;
+    color: #fff;
+
+    .level-left {
+        width: 60%;
+        margin-left: auto;
+
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
+
+        .footer__list-title {
+            font-weight: 800;
+
+        }
+
+        ul {
+            li {
+                color: rgb(172, 172, 172);
+                font-weight: 400;
+
+                a {
+                    color: rgb(172, 172, 172);
+                }
+            }
+        }
+
+    }
+
+}
+
+.modal-background {
+    background-color: #334c9fde;
+}
+
+.payment {
+    background-color: #fff;
+    border-radius: 4px;
+
+    padding: 4rem 6rem;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .02);
+
+
+
+
+    .title {}
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 0;
+    }
+
+    &__price {
+        color: #9453a2;
+        font-size: 2rem;
+        font-weight: 800;
+    }
+
+    &__subscription {
+        text-align: center;
+
+        .field {
+            margin-top: 0.5rem;
+
+        }
+
+        &-offer {
+            color: $feature-background-color;
+        }
+
+        .switch[type="checkbox"].is-info:checked+label::before,
+        .switch[type="checkbox"].is-info:checked+label:before {
+            background: #334c9f;
+        }
+    }
+
+    &__details {
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    &__cat {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 0;
+    }
+
+    &__redio-btn {}
+
+    &__cat-img {
+        img {
+            height: 2rem;
+        }
+    }
+
+    &__form {
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
+
+        .field:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        .icon.is-small.is-right {
+            img {
+                height: 1.8rem;
+
+            }
+        }
+
+        .checkbox {
+            margin-top: 1rem;
+        }
+    }
+
+    &__action {
+        .button {
+            text-align: center;
+            width: 100%;
+            margin: 2rem 0px;
+            background-color: #9453a2;
+            color: #fff;
+            font-weight: 400;
+        }
+    }
+}
+
+
+
+
+

@@ -1,0 +1,21 @@
+{
+  "name": "aidm-task",
+  "version": "1.0.0",
+  "description": "task",
+  "main": "sass/main.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css-build": "node-sass --omit-source-map-url sass/main.scss css/main.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+  },
+  "author": "Ahmed Shibob",
+  "license": "ISC",
+  "devDependencies": {
+    "bulma": "^0.9.0",
+    "node-sass": "^4.14.1"
+  },
+  "dependencies": {
+    "bulma-switch": "^2.0.0"
+  }
+}
